@@ -30,15 +30,15 @@ REST cервис обращается к сервису курсов валют,
 <b>Для запуска приложения:</b><br>
 - скачать docker образ jdk не ниже 14, например `openjdk:16-jdk-alpine`.<br>
 - указать идентификаторы для доступа к внешним сервисам в application.properties:<br>
-для giphy в `app.config.giphy.appkey`
+- для giphy в `app.config.giphy.appkey`
 <br>
-для openexchange в `app.config.open-exchange.appid`
+- для openexchange в `app.config.open-exchange.appid`
 <br>
 - собрать jar приложения c помощью gradle<br>
 - находясь в корневой папке проекта выполнить:<br>
 `docker build -f docker/Dockerfile -t currency-info .`
 <br>
-- после построения образа приложения выполнить:
+- после построения образа приложения выполнить:<br>
 `docker run -it --rm -p 8080:8080 --name currency-info-service currency-info`
 - для запуска:<br>
 `http://localhost:8080/picture?symbol=EUR`
